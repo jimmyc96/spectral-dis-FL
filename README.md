@@ -34,7 +34,7 @@ This is the code for "Spectral Co-Distillation for Personalized Federated Learni
 python main.py --dataset cifar10 --model resnet18 --non_iid_prob_class 0.7 --alpha_dirichlet 10  --rounds 500 --seed 1 --mixup --lr 0.03 --beta 5 --ratio 0.4
 ```
 
-+ To train on CIFAR-100 with IID data partition and noise setting $(\rho,\tau)=(0.6,0.5)$, over 50 clients:
++ To train on CIFAR-100 with non-IID data partition, over 50 clients:
 
 ```
 python main.py --dataset cifar100 --model resnet34 --non_iid_prob_class 0.7 --alpha_dirichlet 10  --rounds 500 --seed 1 --mixup --lr 0.03 --beta 5 --ratio 0.4
@@ -42,3 +42,6 @@ python main.py --dataset cifar100 --model resnet34 --non_iid_prob_class 0.7 --al
 
 + Please find more details of training over iNaturalist dataset in FedGrab [code](https://github.com/ZackZikaiXiao/FedGraB)
 
+#### Communication efficiency evaluation
+
+The overall communication efficiency speedup could be obtained by time tracking. You can use any package which can achieve this objective.  While various packages are available for this purpose, a straightforward method is to use Python’s built-in `time` module. Begin by importing this module and initiating a timer just before the start of the federated training process, as shown: `start_time = time.time()`. After the completion of a training round on each node, log the end time with `end_time = time.time()`. The difference between these two, calculated as `total_training_time = end_time - start_time`, represents the total duration of the training process. To specifically measure the communication time, record timestamps right before and after each phase of data transmission. Accumulating these time segments will give you the total communication time. The efficiency speedup is then derived by comparing this total communication time against the overall training time. This comparison yields a tangible measure of the efficiency enhancements in our federated learning model. It’s important to note that communication speedup may vary based on the training environment and hardware configurations.
