@@ -136,7 +136,7 @@ class LocalUpdate(object):
                 if batch_idx > 0:
                     w_diff = torch.tensor(0.).to(self.args.device)
                     l_reg = self.loss_func_kl(trunc_spec_w, trunc_spec_l)
-                    loss += self.args.beta * mu * l_reg
+                    loss += self.args.lambda_g * mu * l_reg
 
                 loss.backward()
                 optimizer.step()
@@ -189,7 +189,7 @@ class LocalUpdate_per(object):
                 if batch_idx > 0:
                     w_diff = torch.tensor(0.).to(self.args.device)
                     l_reg = self.loss_func_kl(spec_l, spec_w)
-                    loss += self.args.beta * mu * l_reg
+                    loss += self.args.lambda_l * mu * l_reg
                 
                 if self.args.beta > 0:
                     if batch_idx > 0:
