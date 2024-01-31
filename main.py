@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     if not os.path.exists("./results/"):  #for fedavg, beta = 0, 
         os.makedirs("./results/")
-    rootpath = "./results/_LP_%.1f" % (args.beta)
+    rootpath = "./results/ratio_%.1f_lambda_%.1f_%.1f_LP_%.1f" % (args.ratio, args.lambda_g, args.lambda_l, args.beta)
     # if args.beta > 0: # set default mu = 1, and set beta = 1 when using fedprox
     #     #args.mu = 1
     #     rootpath += "_LP_%.1f" % (args.beta)

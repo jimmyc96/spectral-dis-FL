@@ -17,6 +17,8 @@ def args_parser():
     parser.add_argument('--momentum', type=float, default=0.5, help="SGD momentum, default 0.5")    
     parser.add_argument('--beta', type=float, default=0.2, help="coefficient for local proximal, 0 for fedavg, 0.01 for fedprox, 5 for noise fl")
     parser.add_argument('--ratio', type=float, default=0.4, help="ratio for spectral trucation")
+    parser.add_argument('--lambda_g', type=float, default=0.3, help="spectral regularizer coefficient")
+    parser.add_argument('--lambda_l', type=float, default=0.4, help="spectral regularizer coefficient")
 
     # other arguments
     # parser.add_argument('--server', type=str, default='none', help="type of server")
