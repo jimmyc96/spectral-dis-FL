@@ -41,6 +41,7 @@ python main.py --dataset cifar10 --model resnet18 --non_iid_prob_class 0.7 --alp
 python main.py --dataset cifar100 --model resnet34 --non_iid_prob_class 0.7 --alpha_dirichlet 10  --rounds 500 --seed 1 --mixup --lr 0.03 --beta 5 --ratio 0.4
 ```
 
++ Training over single GPU could be slow. Some acceleration techniques could be considered for further training speedup.
 + Please find more details of training over iNaturalist dataset in FedGrab [code](https://github.com/ZackZikaiXiao/FedGraB)
 
 #### Communication efficiency evaluation
