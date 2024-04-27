@@ -24,9 +24,6 @@ This is the code for "Spectral Co-Distillation for Personalized Federated Learni
 | `iid`                | `Action` IID or non-IID data partition, default: `store_true` |
 | `non_iid_prob_class` | Non-IID sampling probability for class                       |
 | `alpha_dirichlet`    | Parameter for Dirichlet distribution ($\alpha_{DIR}$ in the paper) |
-| `pretrained`         | `Action`, whether to use pre-trained model, default: `store_true` |
-| `mixup`              | `Action`, whether to use Mixup, default: `store_true`        |
-| `alpha`              | Parameters for Mixup                                         |
 
 
 
